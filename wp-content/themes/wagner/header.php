@@ -76,29 +76,33 @@
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
-	<header id="mobile">
-		<div class="logomobile"><a href="<?php echo home_url(); ?>">Wagner Enterprise, Inc.</a></div>
-		<div class="socialmobile"><?php echo do_shortcode( '[linkedin][googleplus]') ?></div>
-		<div id="mobilemenu"></div>
-	</header>
-	<a href="tel:2488799000" class="mobilephone"><span class="tel number">248-879-9000</span><span class="click">Click to Call</span></a></a>
-	
-	<aside id="navsidebar">	
-		<div class="navwrap">
-			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php bloginfo('template_url'); ?>/library/images/wagner@2x.png" alt="Wagner Enterprises, Inc." /></a>
-			<nav id="nav" role="navigation">
-				<?php wp_nav_menu( array('menu' => 'primary') ); ?>
-			</nav>
-			<div class="socialicons">
-				<?php echo do_shortcode( '[linkedin][googleplus]') ?>
+	<?php if ( !is_page_template( 'landing-page.php' ) ) : ?>
+		<header id="mobile">
+			<div class="logomobile"><a href="<?php echo home_url(); ?>">Wagner Enterprise, Inc.</a></div>
+			<div class="socialmobile"><?php echo do_shortcode( '[linkedin][googleplus]') ?></div>
+			<div id="mobilemenu"></div>
+		</header>
+		<a href="tel:2488799000" class="mobilephone"><span class="tel number">248-879-9000</span><span class="click">Click to Call</span></a></a>
+		
+		<aside id="navsidebar">	
+			<div class="navwrap">
+				<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php bloginfo('template_url'); ?>/library/images/wagner@2x.png" alt="Wagner Enterprises, Inc." /></a>
+				<nav id="nav" role="navigation">
+					<?php wp_nav_menu( array('menu' => 'primary') ); ?>
+				</nav>
+				<div class="socialicons">
+					<?php echo do_shortcode( '[linkedin][googleplus]') ?>
+				</div>
 			</div>
-		</div>
-	</aside>
+		</aside>
 
-	<div id="content">	
+		<div id="content">	
 
-	<header id="header" role="banner">
-		<a href="tel:2488799000"><span class="phone"><span class="number">248-879-9000</span></span></a>
-		<?php get_template_part('searchform'); ?>
-	</header>
+		<header id="header" role="banner">
+			<a href="tel:2488799000"><span class="phone"><span class="number">248-879-9000</span></span></a>
+			<?php get_template_part('searchform'); ?>
+		</header>
+	<?php else: ?>
+		<?php get_template_part( 'parts/shared/header-landing-page' ); ?>
+	<?php endif; ?>
 
