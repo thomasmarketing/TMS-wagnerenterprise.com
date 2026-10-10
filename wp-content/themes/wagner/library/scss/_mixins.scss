@@ -1,0 +1,209 @@
+//Convert PX to EM Function
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+//Transition
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+//Retina Images
+@mixin retina($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+//Placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content; }
+  :-moz-placeholder           { @content; }
+  ::-moz-placeholder          { @content; }
+  :-ms-input-placeholder      { @content; }  
+}
+
+
+//Media Query Break Points
+@mixin breakpoint($point) {
+  @if $point == 1920px {
+  @media (max-width: 1920px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1680px {
+  @media (max-width: 1680px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1600px {
+  @media (max-width: 1600px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1500px {
+  @media (max-width: 1500px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1440px {
+  @media (max-width: 1440px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1366px {
+  @media (max-width: 1366px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1280px {
+  @media (max-width: 1280px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1240px {
+  @media (max-width: 1240px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 1024px {
+  @media (max-width: 1024px) { @content; }  //Tablet Landscape
+  }
+  @elseif $point == 980px {
+  @media (max-width: 980px) { @content; }  //Tablet Landscape
+  }
+  @else if $point == 960px {
+  @media (max-width: 960px) { @content; } //Tablet Med
+  }
+  @else if $point == 782px {
+    @media (max-width: 782px) { @content; } //Tablet Portrait
+  }
+  @else if $point == 768px {
+    @media (max-width: 768px) { @content; } //Tablet Portrait
+  }
+  @else if $point == 540px {
+  @media (max-width: 540px)  { @content; } //Mobile Lg 
+  }
+  @else if $point == 480px {
+    @media (max-width: 480px)  { @content; } //Mobile Med
+  }
+  @else if $point == 320px {
+    @media (max-width: 320px)  { @content; } //Mobile Sm
+  }
+}
+
+//Box Shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+   box-shadow:$top $left $blur $color #{$inset};
+}
+
+//Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//Border Radius Corners
+@mixin border-radius-corners($topleft, $topright, $bottomright, $bottomleft) {
+  -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+     -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+      -ms-border-radius: $topleft $topright $bottomright $bottomleft;
+          border-radius: $topleft $topright $bottomright $bottomleft;
+}
+
+//Box Sizing
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+// Transform
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// Transform - Rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+ 
+// Transform - Scale
+@mixin scale($scale) {
+   @include transform(scale($scale));
+} 
+// Transform - Translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// Transform - Skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//Transform - Origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+       -o-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+
+@mixin blur($pixels) {
+  -webkit-filter: blur($pixels); 
+  -moz-filter: blur($pixels); 
+  -o-filter: blur($pixels); 
+  -ms-filter: blur($pixels); 
+  filter: blur($pixels);
+}
+
+//Column Count
+@mixin column-count($count) {
+  -webkit-column-count: $count;
+  -moz-column-count: $count;
+  column-count: $count;
+}
+
+//Column Gap
+
+@mixin column-gap($gap) {
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    column-gap: $gap;
+}
+
+//Animation
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}

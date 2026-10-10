@@ -1,0 +1,20 @@
+body#tinymce.wp-editor { 
+    font-family: 'Lato', sans-serif;
+    margin: 10px; 
+}
+
+body#tinymce.wp-editor h1,
+body#tinymce.wp-editor h2,
+body#tinymce.wp-editor h3,
+body#tinymce.wp-editor h4,
+body#tinymce.wp-editor h5,
+body#tinymce.wp-editor h6 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: normal;
+}
+
+body#tinymce.wp-editor a {
+    color: #383ecb;
+}

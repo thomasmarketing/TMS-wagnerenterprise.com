@@ -1,0 +1,93 @@
+/*   
+Theme Name: Wagner Enterprise, Inc
+Theme URI: http://wagnerenterprise.com
+Description: A beautiful custom HTML5 WordPress Theme for Wagner Enterprise, Inc
+Author: Element5 Digital
+Author URI: https://element5digital.com;
+Version: 1.0
+*/
+
+/* LANDING PAGE FOR  Derakane Chemical Resistance Guide*/
+#gform_wrapper_3 { margin-bottom: 100px }
+
+/*  BROUCHURE DOWNLOAD POPUP FORM */
+#download-brochure { cursor: pointer; }
+.popup {  
+  background-color: rgba(207, 154, 77, .8);
+  bottom: 0;
+  height: auto;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  -webkit-transition: all .25s ease-in-out 0s;
+  transition: all .25s ease-in-out 0s; 
+}
+.popup.activated { 
+  display: table;
+  height: 100%;
+  opacity: 1;
+  z-index: 1000;
+}
+.popup .vertical-center {
+  display: table-cell;
+  vertical-align: middle;
+}
+.popup .popup-close {
+  background-image: url(../wagner/library/images/ico-close-white.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  height: 25px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+}
+.popup form {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.popup form  h2 {
+  color: #3e6676;
+  font-weight: bold;
+}
+.popup .gform_wrapper .gform_body .gform_fields .gfield {
+    padding: 0;
+    margin: 0;
+}
+#pdf-download {
+  background: #cf9a4d;
+  padding: 20px 50px;
+  color: #fff;
+  text-transform: uppercase;
+    -webkit-transition: all .25s ease-in-out 0s;
+  transition: all .25s ease-in-out 0s; 
+}
+#pdf-download:hover {
+  background: #a67c3d;
+}
+.page-id-398 iframe { margin-top: 50px; } 
+
+/* gravity form update */
+.gform_wrapper.gravity-theme .gfield_label,
+.gform_wrapper.gravity-theme .ginput_complex label, 
+.gform_wrapper.gravity-theme .ginput_complex legend {
+	width: 100%;
+    text-align: left;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex input[type=text], 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex input[type=email], 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex input[type=tel], 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex input[type=url], 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex input[type=number], 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex input[type=password], 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex textarea, 
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex select {
+	margin-bottom: 6px;
+}
