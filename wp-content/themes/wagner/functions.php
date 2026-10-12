@@ -240,10 +240,16 @@
 	add_shortcode('googlemap', 'google_map');
 
 
-	//Change GForm Submit to Button
+	// Change GForm Submit to Button
 	add_filter("gform_submit_button", "form_submit_button", 10, 2);
-	function form_submit_button($button, $form){
-	    return "<button class='button' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
+
+	function form_submit_button($button, $form) {
+		$form_id = $form["id"];
+
+		// Get submit button text from Gravity Forms settings
+		$button_text = $form["button"]["text"] ?? "Submit";
+
+		return "<button type='submit' class='button' id='gform_submit_button_{$form_id}'><span>" . esc_html($button_text) . "</span></button>";
 	}
 
 	//Register Phone Shortcode
